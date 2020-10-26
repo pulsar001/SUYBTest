@@ -1,0 +1,47 @@
+{
+
+    "// app.html": " // ",
+
+    "Bienvenue": "Bienvenue",
+    "Points": "Points",
+    "Note": "Note",
+    "Devenir un Super-Helper": "Devenir un Super-Helper",
+    "Ton panel Super-Helper": "Ton panel Super-Helper",
+    "Proposer une mission": "Proposer une mission",
+    "Tes missions": "Tes missions",
+    "Notifications": "Notifications",
+    "Ton profil": "Ton profil",
+    "Options": "Options",
+    "Se déconnecter": "Se déconnecter",
+
+    "// map1.html": " // ",
+
+    "Nous avons trouvé": "Nous avons trouvé",
+    "Super-Helpers à proximité de": "Super-Helpers à proximité de",
+    "toi": "toi",
+    "Pour les trouver, cherche sur la map autour de toi, ou affine ta recherche ci dessous.": "Pour les trouver, cherche sur la map autour de toi, ou affine ta recherche ci dessous.",
+    "Je cherche...": "Je cherche...",
+    "Modifier": "Modifier",
+    "Voir son profil": "Voir son profil",
+    "Mission": "Mission",
+    "Voir la mission": "Voir la mission",
+
+    "// map.ts": " // ",
+
+    "Ta position": "Ta position",
+
+    "// missions-search-auto.html & list ": " // ",
+
+    "Ou cherches tu ?": "Ou cherches tu ?",
+    "Adresse": "Adresse",
+    "Que cherches tu ?": "Que cherches tu ?",
+    "Une mission": "Une mission",
+    "Un Super-Helper": "Un Super-Helper",
+    "Continuer": "Continuer",
+    "Recherche en cours": "Recherche en cours",
+    "Patiente une seconde, nous recherchons autour de toi...": "Patiente une seconde, nous recherchons autour de toi...",
+    "Les missions à proximité": "Les missions à proximité",
+    "Distance": "Distance"
+
+    
+}

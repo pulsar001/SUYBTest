@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Mon profil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div id="content">
+      <div id="profile-info">
+        <img id="profile-image" (click)="selectImage()" src="../../assets/imgs/avatar.svg" *ngIf="!api.dataUser?.photos.profile_picture">
+        <img id="profile-image" (click)="selectImage()" src="{{api.avatarLink}}{{api.dataUser?.photos.profile_picture}}" *ngIf="api.dataUser?.photos.profile_picture">
+        <ion-badge>Exp. {{api.dataUser?.stats.exp}}</ion-badge>
+
+        <h3 id="profile-name">{{api.dataUser?.profile.first_name}} {{api.dataUser?.profile.last_name}}</h3>
+        <span id="profile-description" (click)="editInformation()">
+            <span *ngIf="!api.dataUser?.profile.info">Ajoute ta super description ici</span>
+            <span *ngIf="api.dataUser?.profile.info">{{api.dataUser?.profile.info}}</span>
+            <ion-icon name="create"></ion-icon>
+        </span>
+      </div>
+    </div>
+    
+    
+    <form [formGroup]="formGroup">
+
+      <ion-textarea *ngIf="editInformationView" autofocus formControlName="myInfo" placeholder="Description" class="form-input" rows="4"></ion-textarea>
+      
+      <ion-input type="text" formControlName="myFirstName" placeholder="First name" class="form-input"></ion-input>
+
+      <ion-input type="text" formControlName="myLastName" placeholder="Last name" class="form-input"></ion-input>
+
+      <ion-input type="tel" formControlName="myPhone" placeholder="Phone" class="form-input"></ion-input>
+
+      <ion-item col-12 class="form-input">
+          <ion-label>Date de naissance</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" formControlName="myBday"></ion-datetime>
+      </ion-item>
+
+    </form>
+
+</ion-content>
+
+<ion-footer class="button-footer">
+    <button class="btn btn-block btn-normal btn-3 btn-3b" [disabled]="!formGroup.valid" (click)="doSave()">Enregistrer</button>
+</ion-footer>

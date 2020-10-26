@@ -1,0 +1,106 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{info?.profile.first_name}} {{info?.profile.last_name}} Rank</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <div class="container-n">
+		<div class="row">
+			<div class="col-12 main-section">
+				<div class="row">
+
+					<div class="col-12 rating-part-left text-center">
+            <h1>{{note}}</h1>
+						<p>Note moyenne</p>
+          </div>
+
+					<div class="col-6 rating-part-left text-center">
+						<h1>{{+data?.stats?.nbr_missions}}</h1>
+						<p>Missions éffectuées</p>
+          </div>
+
+					<div class="col-6 rating-part-left text-center">
+            <h1>{{data?.stats?.exp}}</h1>
+            <p>Points</p>
+          </div>
+          
+				</div>
+				<div class="row review-section">
+					<div class="col-md-12 col-sm-12 col-xs-12" margin-bottom>
+						<hr>
+						<h3>Ce que les autres pensent</h3>
+						<hr>
+          </div>
+          
+          <div class="row-n" *ngFor="let review of data?.reviews" margin-bottom>  
+            <div class="col-12 review-part-left" margin-bottom>
+              <div class="row">
+                <div class="col-4">
+                  <ion-avatar>
+                    <img src="../../assets/imgs/avatar.svg" *ngIf="!review.profile_picture">
+                    <img src="{{api.avatarLink}}{{review.profile_picture}}" *ngIf="review.profile_picture">
+                  </ion-avatar>
+                </div>	
+                <div class="col-8">
+                  
+                  <div class="content-head">
+                    <small>{{review.date}}</small>
+                    <br>
+                    <span>{{review.first_name}} {{review.last_name}}</span>
+                  </div>
+
+                  <div class="content-rating">
+                    <div class="star-ratings-title">Profil ({{review.rank_profile}}/10)</div>
+                    <div class="star-ratings" id="review-profile-{{review.id_rank}}" style="width:90px;">
+                      <div class="fill-ratings" [style.width.%]="review.rank_profile * 10">
+                        <span>★★★★★</span>
+                      </div>
+                      <div class="empty-ratings" style="width:90px">
+                        <span>★★★★★</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="content-rating">
+                    <div class="star-ratings-title">Mission ({{review.rank_mission}}/10)</div>
+                    <div class="star-ratings" id="review-mission-{{review.id_rank}}" style="width:90px">
+                      <div class="fill-ratings" [style.width.%]="review.rank_mission * 10">
+                        <span>★★★★★</span>
+                      </div>
+                      <div class="empty-ratings" style="width:90px">
+                        <span>★★★★★</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                </div>
+              </div>
+            </div>     
+            <div class="col-12 review-part-right">
+              <div class="row">
+                <div class="col-12">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <div class="col-12">
+                  <p>{{review.message}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+				</div>
+			</div>
+		</div>
+  </div>
+  
+
+</ion-content>

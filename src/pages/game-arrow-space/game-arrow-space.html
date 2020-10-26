@@ -1,0 +1,46 @@
+
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Arrow Space Game</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="background" *ngIf="gameTuto == 0">
+  <div>{{this.gameMessage}}</div>
+  <div>Score: {{this.gameScore}}</div>
+  <div>Arrow: {{this.arrowStat}}</div>
+  <div>Timer: {{this.gameTimer}}</div>
+
+
+  <div class="content-arrow">
+    <div class="in-arrow in-arrow-left-g" *ngIf="this.arrowStat == 1"></div>
+    <div class="in-arrow in-arrow-left-r" *ngIf="this.arrowStat == 2"></div>
+    <div class="in-arrow in-arrow-right-g" *ngIf="this.arrowStat == 3"></div>
+    <div class="in-arrow in-arrow-right-r" *ngIf="this.arrowStat == 4"></div>
+  </div>
+    
+</ion-content>
+  
+<ion-footer class="button-footer" *ngIf="gameTuto == 0">
+    <button class="btn btn-block-n btn-normal btn-3 btn-3b" (click)="choseArrow('l')"><div class="in-arrow in-arrow-left-g"></div></button>
+    <button class="btn btn-block-n btn-normal btn-3 btn-3b" (click)="choseArrow('r')"><div class="in-arrow in-arrow-right-r"></div></button>
+</ion-footer>
+
+
+
+<!-- Tuto -->
+<ion-content padding *ngIf="gameTuto == 1">
+  
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus scelerisque nisi sit amet pretium. Phasellus lacinia commodo nibh at placerat. Etiam purus ex, condimentum eget mauris in, vulputate pharetra lacus. Ut fermentum malesuada tortor tempus sagittis. Maecenas tincidunt felis rhoncus mattis dapibus. Sed quis porttitor dolor, id vulputate magna. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ut pellentesque nunc. Donec id facilisis sem. Cras ut neque mi. Integer urna nisl, elementum eget nisi ac, efficitur sollicitudin mi. Suspendisse porta a augue in interdum. Ut rutrum nibh est, ut feugiat tortor blandit at. Cras malesuada tincidunt magna, sed fermentum quam scelerisque sed.
+  <br><br>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus scelerisque nisi sit amet pretium. Phasellus lacinia commodo nibh at placerat. Etiam purus ex, condimentum eget mauris in, vulputate pharetra lacus. Ut fermentum malesuada tortor tempus sagittis. Maecenas tincidunt felis rhoncus mattis dapibus. Sed quis porttitor dolor, id vulputate magna. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ut pellentesque nunc. Donec id facilisis sem. Cras ut neque mi. Integer urna nisl, elementum eget nisi ac, efficitur sollicitudin mi. Suspendisse porta a augue in interdum. Ut rutrum nibh est, ut feugiat tortor blandit at. Cras malesuada tincidunt magna, sed fermentum quam scelerisque sed.
+
+</ion-content>
+  
+<ion-footer class="button-footer" *ngIf="gameTuto == 1">
+    <button class="btn btn-block btn-normal btn-3 btn-3b" (click)="gameExitTuto()">Continue</button>
+</ion-footer>

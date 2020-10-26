@@ -1,0 +1,77 @@
+$yellow: #ffd520;
+$black: #111;
+
+page-settings {
+
+    .profile-banner {
+        padding: 10px;
+        margin: 0px;
+        width: 100%;
+        height: 150px;
+        background-color: $yellow;
+        color: $black;
+        position: relative;
+        border-radius: 0;
+    }
+    .profile-banner h2 {
+        color: $black;
+        margin-bottom: 5px;
+        font-size: 20px !important;
+        color:#444 !important;
+        font-weight: bold !important;
+    }
+    .profile-banner .profile-level {
+        color: $black;
+    }
+    .profile-banner .profile-level span {
+        color: #222;
+    }
+    .profile-banner .version-application {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        color: #888;
+    }
+    .profile-banner .profile-banner-view {
+        height: 80px;
+    }
+    .profile-banner .profile-banner-view ion-icon {
+        font-size: 50px;
+        margin:0px 20px;
+    }
+
+
+    .profile-banner-view img {
+        border-radius: 50% !important;
+        width:100px !important;
+        height: 100px !important;
+        margin-right:40px !important;
+        float: left;
+    }
+    .profile-banner-view ion-icon {
+        font-size: 50px;
+        margin:0px 20px;
+        width:50px;
+        margin:10%;
+        float: left;
+    }
+    ion-icon {
+        width:25px !important;
+        color:#555;
+    }
+
+    ion-item {
+        cursor: pointer;
+        font-size: 20px !important;
+        color:#444 !important;
+        font-weight: bold !important;
+    }
+    .item-inner {
+        border:0 !important;
+        margin:4px 0 !important;
+    }
+    ion-list {
+        padding-top:20px !important;
+    }
+
+}

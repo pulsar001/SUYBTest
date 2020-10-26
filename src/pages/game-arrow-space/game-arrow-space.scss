@@ -1,0 +1,43 @@
+page-game-arrow-space {
+
+    $bgcolor: #222;
+    $textcolor: #eee;
+    $size: 6rem;
+
+    .toolbar-background-md {
+        border-color: $bgcolor;
+        background: $bgcolor;
+        color:$textcolor
+    }
+
+    ion-content.background{
+        background: url('../../assets/games/arrowspace/bg.jpg') 0 0/100% 100% no-repeat;
+    }
+
+    .content-arrow {
+        width:$size;
+        height: $size;
+        position: absolute;
+        top:calc(50% - 3rem);
+        left:calc(50% - 3rem)
+    }
+    .in-arrow {
+        background-size: cover;
+        width:$size;
+        height:$size;
+        display: inline-block;
+    }
+    .in-arrow-left-g {
+        background-image: url('../../assets/flat/arrow/892622-arrows/png/054-left-arrow-3-green.png');
+    }
+    .in-arrow-left-r {
+        background-image: url('../../assets/flat/arrow/892622-arrows/png/054-left-arrow-3-red.png');
+    }
+    .in-arrow-right-g {
+        background-image: url('../../assets/flat/arrow/892622-arrows/png/038-right-arrow-3-green.png');
+    }
+    .in-arrow-right-r {
+        background-image: url('../../assets/flat/arrow/892622-arrows/png/038-right-arrow-3-red.png');
+    }
+
+}

@@ -1,0 +1,19 @@
+<ion-header class="bg-white"><ion-navbar></ion-navbar></ion-header>
+
+<ion-content class="welcome-form" padding>
+  
+    <h2>Une mise à jour est disponible</h2>
+
+    <p>Cette nouvelle mise à jour est indispensable au bon fonctionnement de l'application. Soit tu peux autoriser l'application à faire automatiquement la mise à jour, soit tu peux le faire manuellement via le Play Store.</p>
+  
+    <p>Voici ce qu'apporte cette nouvelle vérsion :</p>
+    <p>{{info}}</p>
+
+    <div class="info">Version {{version}}</div>
+
+</ion-content>
+
+<ion-footer class="button-footer">
+    <button class="btn btn-block btn-normal btn-3 btn-3b" (click)="update()">Update</button>
+    <button class="btn btn-block" (click)="store()">Aller sur le Play Store</button>
+</ion-footer>

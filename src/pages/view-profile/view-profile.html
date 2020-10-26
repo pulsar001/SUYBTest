@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <div id="profile-bg"></div>
+    <div id="content">
+      <div id="profile-info">
+        <img id="profile-image" src="../../assets/imgs/avatar.svg" *ngIf="!info?.photos.profile_picture">
+        <img id="profile-image" src="{{api.avatarLink}}{{info?.photos.profile_picture}}" *ngIf="info?.photos.profile_picture">
+        <ion-badge>Exp. {{info?.stats.exp}}</ion-badge>
+
+        <h3 id="profile-name">{{info?.profile.first_name}} {{info?.profile.last_name}}</h3>
+        <span id="profile-description">
+            {{info?.profile.info}}
+        </span>
+      </div>
+
+      <div *ngIf="info?.profile.first_name || info?.profile.last_name">
+
+        <ion-card *ngIf="info?.stats?.exp > 1" (click)="viewRank()">
+
+            <ion-card-content class="services-active">
+                <h2 class="title-style"><ion-icon name="trophy" color="green"></ion-icon> {{info?.profile.first_name}} {{info?.profile.last_name}} a {{info?.stats.exp}} points d'expérience et {{info?.stats.nbr_missions}} missions à son actif</h2>
+            </ion-card-content>
+          
+        </ion-card>
+        
+        <ion-card *ngIf="info?.helper?.active == '1' && info?.helper?.info">
+
+            <ion-card-content class="services-active" (click)="toggleInfo('helper')">
+                <h2 class="title-style"><ion-icon name="ribbon" color="primary"></ion-icon> {{info?.profile.first_name}} {{info?.profile.last_name}} est un Super-Helper</h2>
+                
+                <div id="services-helper" class="services-content" *ngIf="toggleView.helper">
+                    <p>{{info?.helper?.info}}</p>
+                    <button class="btn btn-3 btn-3e btn-block icon-arrow-right" (click)="ask('needer')" *ngIf="info?.profile.id_profile != api.dataUser.profile.id_profile">Demander son aide</button>
+                </div>
+            </ion-card-content>
+          
+        </ion-card>
+
+      </div>
+
+
+    </div>
+    
+</ion-content>
+
+<ion-footer *ngIf="info?.profile.phone">
+    <ion-row>
+        <ion-col no-padding>
+            <button class="btn btn-3 btn-3a btn-footer" no-margin ion-button full large color="yellow" (click)="callPhone()"><ion-icon name="call"></ion-icon></button>
+        </ion-col>
+    </ion-row>
+</ion-footer>

@@ -14,3 +14,197 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+$reddish : #E74C3C;
+$redder : #C0392B;
+$cloud : #ECF0F1;
+
+$yellow: #ffd520;
+$white: #fff;
+$black: #111;
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+@import "../assets/css/button";
+
+#menuPanlerSt {
+
+    .toolbar-background-md {
+        border-color: #ffd520;
+        background: #ffd520;
+        color: #111;
+    }
+
+    ion-avatar img {
+        border-radius: 50%;
+        width:20%;
+        margin:10%;
+        float: left;
+    }
+    .profile-banner-view ion-icon {
+        font-size: 50px;
+        margin:0px 20px;
+        width:50px;
+        margin:10%;
+        float: left;
+    }
+
+    ion-label {
+        width:50%;
+        float: left;
+    }
+
+    ion-icon {
+        width:25px;
+        color:#555
+    }
+
+    ion-item {
+        cursor: pointer;
+        font-size: 20px;
+        color:#444;
+        font-weight: bold;
+    }
+    .item-inner {
+        border:0;
+        margin:4px 0;
+    }
+    ion-list {
+        padding-top:20px
+    }
+
+    ion-header h3 {
+        font-size: 20px;
+        color:#444;
+        font-weight: bold;
+    }
+}
+
+ion-header .toolbar-title {
+    font-weight: bold;
+}
+
+.bg-white .toolbar-background-md {
+    border-color: $white;
+    background: $white;
+    color:$black
+}
+.toolbar-background-md {
+    border-color: $yellow;
+    background: $yellow;
+    color:$black
+}
+ion-header::after {
+    background-image: none;
+}
+.header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    background: none !important;
+}
+
+.flat-button {
+    position: relative;
+    // background: $reddish;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    transition: color .3s;
+    /* Typo */
+    line-height: 60px;
+    text-align: center;
+    color: $redder;
+    background-color: $cloud;
+    text-transform: uppercase;
+
+}
+.flat-button:hover {
+    background-color: $cloud !important;
+}
+.btn-normal {
+    padding: 25px 80px;
+}
+
+.button-footer {
+    padding:2vh 5vw;
+}
+
+.title-style {
+    color:#444 !important;
+    font-weight: bold !important;
+}
+
+.welcome-form {
+    margin-top:5vh !important;
+
+    h1 {
+        font-size: 40px;
+        color:#444;
+        font-weight: bold;
+    }
+    h2 {
+        font-size: 20px;
+        color:#444;
+        font-weight: bold;
+    }
+
+    ion-input {
+        padding:10px 10px;
+        margin:20px 0;
+        border: 1px solid $yellow;
+        border-radius: 20px;
+        font-size: 22px;
+        color:#444;
+        font-weight: bold;
+    }
+    .text-input {
+    }
+
+    .info {
+        font-size: 15px;
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+.form-input {
+    padding:10px 10px;
+    margin:20px 0;
+    border: 1px solid $yellow;
+    border-radius: 20px;
+    font-size: 22px;
+    color:#444;
+    font-weight: bold;
+}
+.form-info {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.hidden {
+    display:none !important
+}
+
+.empty-page {
+    height: 50vh;
+}
+.empty-page:after {
+    content: "C'est vide pour l'instant, reviens plus tard";
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width:inherit; 
+
+    color:rgb(219, 219, 219);
+    font-weight: bold;
+    font-size: 20px;
+    
+ }
+
+ion-app ion-content { pointer-events: auto !important; /*fix scroll lock on ios12.2*/ }
+
+.game-content {
+
+    
+
+}

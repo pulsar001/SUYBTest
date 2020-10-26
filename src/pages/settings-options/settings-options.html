@@ -1,0 +1,34 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Options</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <form [formGroup]="formGroup">
+
+      <ion-item margin-bottom>
+        <ion-label>Language</ion-label>
+        <ion-select formControlName="myLang">
+          <ion-option value="en">English</ion-option>
+          <ion-option value="fr">Français</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item margin-bottom>
+        <ion-label color="primary">Notifications Push</ion-label>
+        <ion-toggle color="primary" formControlName="myNotificationsPush"></ion-toggle>
+      </ion-item>
+
+  </form>
+
+</ion-content>
+
+<ion-footer class="button-footer">
+    <button class="btn btn-block btn-normal btn-3 btn-3b" [disabled]="!formGroup.valid" (click)="doSave()">Enregistrer</button>
+</ion-footer>

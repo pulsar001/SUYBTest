@@ -1,0 +1,18 @@
+<ion-header class="bg-white"><ion-navbar></ion-navbar></ion-header>
+
+<ion-content class="welcome-form" padding>
+  
+    <h2>Es-tu sûr de vouloir te déconnecter ?</h2>
+  
+    <p>
+      En te déconnectant tu ne seras plus visible par les autres, il te faudra donc réactiver ta position une fois reconnecter.
+    </p>
+
+    <p>Ah, et n'oublie pas de bien noter tes identifiants avant d'y aller.</p>
+
+</ion-content>
+
+<ion-footer class="button-footer">
+    <button class="btn btn-block btn-normal" (click)="back()">Revenir en arrière</button>
+    <button class="btn btn-block btn-normal btn-3 btn-3b" margin-top [disabled]="disconnectTime > 0" (click)="disconnect()">Se déconnecter <span *ngIf="disconnectTime > 0">({{disconnectTime}})</span></button>
+</ion-footer>

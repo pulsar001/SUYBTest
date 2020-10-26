@@ -1,0 +1,18 @@
+page-welcome-success {
+    .lottie-content {
+        width:100vw;
+        margin-top: calc(40vh - 138px) !important;
+        margin:0 auto;
+    }
+
+    h2, h3 {
+        margin-left:10vw;
+    }
+
+    .wait-message {
+        position: fixed;
+        bottom:50px;
+        width:100%;
+        text-align: center;
+    }
+}

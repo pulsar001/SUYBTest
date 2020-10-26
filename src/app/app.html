@@ -1,1 +1,60 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu id="menuPanlerSt" type="overlay" [content]="menuPanel" *ngIf="api.isConnected === true">
+    <ion-header (click)="viewProfile()">
+    <ion-toolbar class="profile-banner-view">
+
+      <ion-avatar slot="end">
+          <img id="profile-image" src="../../assets/imgs/avatar.svg" *ngIf="!api.dataUser?.photos.profile_picture">
+          <img id="profile-image" src="{{api.avatarLink}}{{api.dataUser?.photos.profile_picture}}" *ngIf="api.dataUser?.photos.profile_picture">
+      </ion-avatar>
+      <ion-label>
+        <h3 *ngIf="!api.dataUser?.profile.first_name && !api.dataUser?.profile.last_name">{{ "Bienvenue" | translate }}</h3>
+        <h3 *ngIf="api.dataUser?.profile.first_name || api.dataUser?.profile.last_name">{{api.dataUser?.profile.first_name}} {{api.dataUser?.profile.last_name}}</h3>
+        <p>
+            <span>{{ "Points" | translate }} {{api.dataUser?.stats.exp}}</span>
+            <span margin-left *ngIf="api.dataUser?.stats.exp > 0">{{ "Note" | translate }} {{api.getRank(api.dataUser?.stats.exp, api.dataUser?.stats.nbr_missions)}}</span>        
+        </p>
+      </ion-label>
+    
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="menu('helper')">
+          <ion-icon name="ribbon"></ion-icon>
+          <span *ngIf="api.dataUser?.helper?.active != 1">{{ "Devenir un Super-Helper" | translate }}</span>
+          <span *ngIf="api.dataUser?.helper?.active == 1">{{ "Ton panel Super-Helper" | translate }}</span>
+      </ion-item>
+      <ion-item (click)="menu('my-missions')">
+          <ion-icon name="hand"></ion-icon>
+          <span>{{ "Proposer une mission" | translate }}</span>
+      </ion-item>
+      <ion-item (click)="menu('missions')">
+          <ion-icon name="flash"></ion-icon>
+          {{ "Tes missions" | translate }}
+      </ion-item>
+      <ion-item (click)="menu('notifications')">
+          <ion-icon name="notifications"></ion-icon>
+          {{ "Notifications" | translate }} <ion-badge color="yellow" item-end>{{api.dataUser?.stats?.nbr_notifications}}</ion-badge>
+      </ion-item>
+      <ion-item (click)="menu('profile')">
+          <ion-icon name="contact"></ion-icon>
+          {{ "Ton profil" | translate }}
+      </ion-item>
+      <ion-item (click)="menu('settings')">
+          <ion-icon name="switch"></ion-icon>
+          {{ "Options" | translate }}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+    <ion-item (click)="menu('disconnect')">
+        <ion-icon name="power"></ion-icon>
+        {{ "Se déconnecter" | translate }}
+    </ion-item>
+  </ion-footer>
+
+</ion-menu>
+
+
+<ion-nav #menuPanel [root]="rootPage"></ion-nav>

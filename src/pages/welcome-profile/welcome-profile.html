@@ -1,0 +1,20 @@
+
+<ion-header class="bg-white"><ion-navbar></ion-navbar></ion-header>
+
+<ion-content class="welcome-form" padding>
+  
+    
+    <h2>Dis nous en plus sur toi</h2>
+    <form [formGroup]="formGroup">
+
+        <ion-input type="text" formControlName="myFirstName" placeholder="Prénom"></ion-input>
+        <ion-input type="text" formControlName="myLastName" placeholder="Nom"></ion-input>
+
+        <div class="info">Ca permettra aux autres de plus facilement savoir qui tu es</div>
+    </form>
+
+</ion-content>
+
+<ion-footer class="button-footer">
+    <button class="btn btn-block btn-normal btn-3 btn-3b" [disabled]="!formGroup.valid" (click)="nextStep()">Continuer</button>
+</ion-footer>

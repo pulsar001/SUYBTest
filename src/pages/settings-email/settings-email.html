@@ -1,0 +1,25 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Email</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <form [formGroup]="formGroup">
+
+        <ion-input type="text" formControlName="myEmail" placeholder="Email" class="form-input"></ion-input>
+
+        <ion-input type="password" formControlName="myPassword" placeholder="Password" class="form-input"></ion-input>
+  
+    </form>
+  
+</ion-content>
+  
+<ion-footer class="button-footer">
+    <button class="btn btn-block btn-normal btn-3 btn-3b" [disabled]="!formGroup.valid" (click)="doSave()">Enregistrer</button>
+</ion-footer>

@@ -1,0 +1,27 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Notifications</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item *ngIf="notifications == ''" class="empty-page">
+    </ion-item>
+
+    <ion-item *ngFor="let notification of notifications" (click)="toggleNotification(notification)">
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/avatar.svg" *ngIf="!notification?.picture">
+        <img src="{{api.avatarLink}}{{notification.picture}}" *ngIf="notification.picture">
+      </ion-avatar>
+      <h2>[{{notification.type | titlecase}}] {{notification.name}}</h2>
+      <p text-wrap><small>{{notification.date}}</small></p>
+      <div text-wrap>{{notification.message}}</div>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Options</ion-title>
+
+    <ion-buttons end>
+        <button ion-button icon-only (click)="logOut()">
+            <ion-icon name="power"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+      <ion-card class="profile-banner">
+
+        <ion-card-content>
+          
+          <div float-left class="profile-banner-view">
+              <img id="profile-image" src="../../assets/imgs/avatar.svg" *ngIf="!api.dataUser?.photos.profile_picture">
+              <img id="profile-image" src="{{api.avatarLink}}{{api.dataUser?.photos.profile_picture}}" *ngIf="api.dataUser?.photos.profile_picture">
+          </div>
+          <div float-left class="profile-banner-view">
+            <h2 *ngIf="!api.dataUser?.profile.first_name && !api.dataUser?.profile.last_name">Bienvenue</h2>
+            <h2 *ngIf="api.dataUser?.profile.first_name || api.dataUser?.profile.last_name">{{api.dataUser?.profile.first_name}} {{api.dataUser?.profile.last_name}}</h2>
+            <p class="profile-level">Niveau {{api.dataUser?.stats.exp}}</p>
+            <p class="version-application">ver. {{api.appConfig?.version}}</p>
+          </div>
+        </ion-card-content>
+      
+      </ion-card>
+
+      <ion-list>
+
+        <ion-item (click)="itemSelected('options')">
+            <ion-icon name="settings"></ion-icon>
+            Options
+        </ion-item>
+
+        <ion-item (click)="itemSelected('email')">
+            <ion-icon name="mail"></ion-icon>
+            Email
+        </ion-item>
+
+        <ion-item (click)="itemSelected('password')">
+            <ion-icon name="lock"></ion-icon>
+            Mot de passe
+        </ion-item>
+
+        <ion-item (click)="itemSelected('conditions')">
+            <ion-icon name="paper"></ion-icon>
+            Conditions
+        </ion-item>
+
+        <ion-item (click)="itemSelected('about')">
+            <ion-icon name="pricetag"></ion-icon>
+            A propos
+        </ion-item>
+
+        <ion-item (click)="itemSelected('contact')">
+            <ion-icon name="send"></ion-icon>
+            Contact
+        </ion-item>
+
+
+      </ion-list>
+  
+</ion-content>

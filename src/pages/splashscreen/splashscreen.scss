@@ -1,0 +1,21 @@
+$yellow: #ffd520;
+$black: #111;
+
+page-splashscreen {
+
+    ion-content {
+        background-color: $yellow !important;
+        color: $black !important;
+
+        text-align: center;
+
+        font-size: 30px;
+    }
+
+    .lottie-content {
+        width:auto;
+        margin-top: calc(50vh - 138px) !important;
+        margin:0 auto;
+    }
+
+}
