@@ -28,8 +28,9 @@ export class DashboardPage {
       switch(game) {
         case "ArrowSpace":
           this.navCtrl.push("GameArrowSpacePage");
-          console.log('dd');
-
+        break;
+        case "MemorySquare":
+          this.navCtrl.push("GameMemorySquarePage");
         break;
       }
 

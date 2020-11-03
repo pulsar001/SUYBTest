@@ -17,9 +17,12 @@ import { UserProvider } from '../../providers/user/user';
 })
 export class GameMemorySquarePage {
 
-  matrix:any = [];
+  matrix = [];
+
   matrixX:number = 2;
   matrixY:number = 2;
+  matrixMin:number = 2;
+  matrixWidth:number = 100;
 
   gameTuto:number = 1;
   gameTimer:number;
@@ -74,6 +77,8 @@ export class GameMemorySquarePage {
     let matrixTotal = 0;
     for(var x = 0; x <= this.matrixX; x++) {
 
+        this.matrix[x] = [];
+
         for(var y = 0; y < this.matrixY; y++) {
 
             this.matrix[x][y] = ((Math.floor(Math.random() * 2) + 1) - 1);
@@ -83,7 +88,9 @@ export class GameMemorySquarePage {
 
     }
 
-    if(matrixTotal == 0) this.newMatrix();
+    if(matrixTotal < this.matrixMin) this.newMatrix();
+
+    this.matrixWidth = parseFloat((99/this.matrixX).toFixed(3));
 
   }
 
