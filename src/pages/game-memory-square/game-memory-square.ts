@@ -90,7 +90,7 @@ export class GameMemorySquarePage {
 
     if(matrixTotal < this.matrixMin) this.newMatrix();
 
-    this.matrixWidth = parseFloat((99/this.matrixX).toFixed(3));
+    this.matrixWidth = parseFloat(((100/this.matrixX) - 1).toFixed(3));
 
   }
 
